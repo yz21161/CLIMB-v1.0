@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwyer1pldxn07"]
+
+[ext_resource type="Texture2D" uid="uid://cjsned8f03yh2" path="res://Floating_rock.png" id="1_4nkmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it32g"]
+size = Vector2(49, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wu18n"]
+size = Vector2(49, 20)
+
+[sub_resource type="Animation" id="Animation_bqsal"]
+resource_name = "down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 20), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ny74l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gh8yb"]
+_data = {
+"RESET": SubResource("Animation_ny74l"),
+"down": SubResource("Animation_bqsal")
+}
+
+[node name="rock" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4nkmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_it32g")
+
+[node name="trigger" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_wu18n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gh8yb")
+}

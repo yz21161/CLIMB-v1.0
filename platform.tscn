@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4wcqwa3do87c"]
+
+[ext_resource type="Texture2D" uid="uid://bply3avn357v7" path="res://platform.png" id="1_3tm47"]
+[ext_resource type="Script" path="res://platform.gd" id="1_j8uui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fxgv"]
+size = Vector2(64, 10)
+
+[sub_resource type="Animation" id="Animation_nnjvk"]
+length = 0.001
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_h18mv"]
+resource_name = "platform"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.5, 10, 17.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-478, 0), Vector2(-478, -3500), Vector2(-478, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f5v2f"]
+_data = {
+"RESET": SubResource("Animation_nnjvk"),
+"platform": SubResource("Animation_h18mv")
+}
+
+[node name="AnimatableBody2D" type="AnimatableBody2D"]
+position = Vector2(-478, 0)
+script = ExtResource("1_j8uui")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1478, 0)
+texture = ExtResource("1_3tm47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1478, -6.37366)
+shape = SubResource("RectangleShape2D_0fxgv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f5v2f")
+}

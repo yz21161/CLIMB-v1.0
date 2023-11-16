@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpxdrwm6uv6o"]
+
+[ext_resource type="Texture2D" uid="uid://pqu60yog5ilc" path="res://Arrow.png" id="1_i4ejg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkf8l"]
+size = Vector2(34, 6)
+
+[sub_resource type="Animation" id="Animation_t2m71"]
+resource_name = "new_animation"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1147, -145), Vector2(1327, -145)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ivtjm"]
+_data = {
+"new_animation": SubResource("Animation_t2m71")
+}
+
+[node name="arrow" type="AnimatableBody2D"]
+position = Vector2(1186.04, -145)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.23437, 1)
+texture = ExtResource("1_i4ejg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lkf8l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ivtjm")
+}

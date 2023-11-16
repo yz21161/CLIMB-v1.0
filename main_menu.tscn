@@ -1,0 +1,201 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3wiatg1o6fy2"]
+
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="1_3uh0v"]
+[ext_resource type="Texture2D" uid="uid://yh4yej5s0qdd" path="res://tilesetOpenGameBackground.png" id="1_r6x4h"]
+
+[sub_resource type="SystemFont" id="SystemFont_bgn81"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n00k1"]
+font = SubResource("SystemFont_bgn81")
+font_size = 48
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_3uh0v")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_right = 1.113
+anchor_bottom = 1.593
+offset_right = 271.824
+offset_bottom = 395.736
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1974.0
+offset_bottom = 956.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/CenterContainer"]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "WELCOME
+"
+label_settings = SubResource("LabelSettings_n00k1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonSTART" type="Button" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "START"
+
+[node name="ButtonHOW" type="Button" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "HOW TO PLAY"
+
+[node name="HOW TO PLAY" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = -0.176025
+offset_bottom = -0.264038
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/HOW TO PLAY"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 2047.0
+offset_bottom = 991.0
+scale = Vector2(1, 0.998042)
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/HOW TO PLAY/CenterContainer"]
+custom_minimum_size = Vector2(700, 648)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HOW TO PLAY/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/HOW TO PLAY/CenterContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HOW TO PLAY/CenterContainer/PanelContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HOW TO PLAY/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+size_flags_vertical = 1
+text = "HOW TO PLAY
+"
+label_settings = SubResource("LabelSettings_n00k1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/HOW TO PLAY/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Use [W],[A],[S],[D] to move
+"
+label_settings = SubResource("LabelSettings_n00k1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/HOW TO PLAY/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Left click to dash
+
+"
+label_settings = SubResource("LabelSettings_n00k1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/HOW TO PLAY/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Parkour to WIN
+"
+label_settings = SubResource("LabelSettings_n00k1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBACK" type="Button" parent="CanvasLayer/HOW TO PLAY/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "BACK
+"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_right = 2050.0
+offset_bottom = 1276.0
+texture = ExtResource("1_r6x4h")
+
+[node name="level" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchor_right = 1.113
+anchor_bottom = 1.593
+offset_right = 271.824
+offset_bottom = 395.736
+
+[node name="CenterContainer" type="CenterContainer" parent="level"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1974.0
+offset_bottom = 956.0
+
+[node name="PanelContainer" type="PanelContainer" parent="level/CenterContainer"]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="level/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="level/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="level/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "LEVEL
+"
+label_settings = SubResource("LabelSettings_n00k1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonCasual" type="Button" parent="level/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "CASUAL MODE"
+
+[node name="ButtonChallenge" type="Button" parent="level/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "CHALLENGER MODE"
+
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonSTART" to="CanvasLayer" method="_on_button_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonHOW" to="CanvasLayer" method="_on_button_how_pressed"]
+[connection signal="pressed" from="CanvasLayer/HOW TO PLAY/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ButtonBACK" to="CanvasLayer" method="_on_button_back_pressed"]
+[connection signal="pressed" from="level/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonCasual" to="CanvasLayer" method="_on_button_casual_pressed"]
+[connection signal="pressed" from="level/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonChallenge" to="CanvasLayer" method="_on_button_challenge_pressed"]

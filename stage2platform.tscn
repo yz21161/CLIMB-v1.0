@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq56dt5whwrow"]
+
+[ext_resource type="Texture2D" uid="uid://c2ag5mw843a66" path="res://Legacy-Fantasy - High Forest 2.3/Assets/stage2platform02.png" id="1_a57f4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbnr3"]
+size = Vector2(36, 40)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_a57f4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_bbnr3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
